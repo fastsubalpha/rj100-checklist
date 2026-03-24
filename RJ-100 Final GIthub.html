@@ -1,0 +1,2690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RJ‑100 Checklist — MD‑11 Layout</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #0d1117;
+      color: #e6edf3;
+      font-family: system-ui, sans-serif;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* HEADER */
+    .title {
+      margin: 0;
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    .subtitle {
+      margin: 4px 0 16px;
+      color: #8b949e;
+      font-size: 0.9rem;
+    }
+
+    /* CONTROL BAR */
+    .control-bar {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .control-bar button {
+      background: #21262d;
+      border: 1px solid #30363d;
+      color: #e6edf3;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .control-bar button:hover {
+      background: #30363d;
+    }
+
+    #progress {
+      margin-left: auto;
+      color: #8b949e;
+    }
+
+    /* PHASE CARD */
+    .phase {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 10px;
+      margin-bottom: 14px;
+      overflow: hidden;
+    }
+
+    .phase-header {
+      display: flex;
+      justify-content: space-between;
+      padding: 14px;
+      cursor: pointer;
+      background: #1d232a;
+    }
+
+    .phase-title {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    .phase-subtitle {
+      margin: 2px 0 0;
+      font-size: 0.85rem;
+      color: #8b949e;
+    }
+
+    .phase-number {
+      background: #30363d;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+
+    .phase-body {
+      padding: 14px;
+      display: block;
+    }
+
+    .phase.collapsed .phase-body {
+      display: none;
+    }
+
+    /* SUBSECTION */
+    .subsection-title {
+      margin: 10px 0 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    /* CHECK ROW */
+    .check-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+      padding: 8px 0;
+      border-bottom: 1px solid #30363d;
+    }
+
+    .check-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .check-action {
+      color: #58a6ff;
+      font-weight: 600;
+      align-self: center;
+    }
+
+    .check-note {
+      grid-column: 1 / -1;
+      margin: 4px 0 0;
+      color: #8b949e;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- HEADER -->
+    <header class="header">
+      <h1 class="title">RJ‑100 CHECKLIST</h1>
+      <p class="subtitle">MD‑11 Style Layout</p>
+    </header>
+
+    <!-- CONTROL BAR -->
+    <div class="control-bar">
+      <button id="expandAll">Expand All</button>
+      <button id="collapseAll">Collapse All</button>
+      <button id="resetAll">Reset</button>
+      <span id="progress">Progress: 0%</span>
+    </div>
+
+    <!-- PHASES -->
+    <main id="phases">
+<!-- PHASE 1 — FLIGHT DECK SAFETY INSPECTION -->
+<section class="phase collapsed">
+  <div class="phase-header">
+    <div class="phase-header-left">
+      <h2 class="phase-title">PHASE 1 — FLIGHT DECK SAFETY INSPECTION</h2>
+      <p class="phase-subtitle">Initial cockpit safety and configuration</p>
+    </div>
+    <div class="phase-number">1</div>
+  </div>
+
+  <div class="phase-body">
+
+    <div class="subsection">
+      <h3 class="subsection-title">1.1 Weather Radar</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p1-1">
+          <span class="check-label">Weather Radar</span>
+        </label>
+        <span class="check-action">OFF</span>
+        <p class="check-note">Ensure radar is off during ground safety inspection.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">1.2 Tilt</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p1-2">
+          <span class="check-label">Tilt</span>
+        </label>
+        <span class="check-action">+15°</span>
+        <p class="check-note">Set initial tilt up to avoid ground returns.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">1.3 Transponder</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p1-3">
+          <span class="check-label">Transponder</span>
+        </label>
+        <span class="check-action">STBY</span>
+        <p class="check-note">Keep transponder in standby until ready for departure.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">1.4 Airbrake</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p1-4">
+          <span class="check-label">Airbrake</span>
+        </label>
+        <span class="check-action">IN</span>
+        <p class="check-note">Verify airbrake lever is fully retracted.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">1.5 Flaps</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p1-5">
+          <span class="check-label">Flaps</span>
+        </label>
+        <span class="check-action">UP</span>
+        <p class="check-note">Confirm clean flap configuration on stand.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">1.6 Landing Gear Lever</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p1-6">
+          <span class="check-label">Landing Gear Lever</span>
+        </label>
+        <span class="check-action">DOWN</span>
+        <p class="check-note">Verify lever is down and indications show gear down.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PHASE 2 — ESTABLISHING EXTERNAL & APU POWER -->
+<section class="phase collapsed">
+  <div class="phase-header">
+    <div class="phase-header-left">
+      <h2 class="phase-title">PHASE 2 — ESTABLISHING EXTERNAL &amp; APU POWER</h2>
+      <p class="phase-subtitle">Electrical, basic systems, and APU air</p>
+    </div>
+    <div class="phase-number">2</div>
+  </div>
+
+  <div class="phase-body">
+
+    <div class="subsection">
+      <h3 class="subsection-title">2.1 BATT 1+2</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p2-1">
+          <span class="check-label">BATT 1+2 (OH)</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Energize aircraft DC systems.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">2.2 DC Meter</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p2-2">
+          <span class="check-label">DC Meter BATT 1+2</span>
+        </label>
+        <span class="check-action">CHECK ≥ 23V</span>
+        <p class="check-note">Verify sufficient battery voltage before APU start.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">2.3 NAV Lights</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p2-3">
+          <span class="check-label">NAV Lights</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Indicate aircraft is powered on the ramp.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">2.4 NO SMKG</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p2-4">
+          <span class="check-label">NO SMKG</span>
+        </label>
+        <span class="check-action">AUTO</span>
+        <p class="check-note">Set cabin no‑smoking signs to automatic.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">2.5 CABIN EMERG</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p2-5">
+          <span class="check-label">CABIN EMERG</span>
+        </label>
+        <span class="check-action">ARM</span>
+        <p class="check-note">Arm emergency lighting for cabin.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">2.6 BRAKE SELECT</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p2-6">
+          <span class="check-label">BRAKE SELECT</span>
+        </label>
+        <span class="check-action">YEL</span>
+        <p class="check-note">Select yellow brake system for parking.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">2.7 Yaw Damp Master 1+2</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p2-7">
+          <span class="check-label">YAW DAMP MASTER 1+2</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Enable yaw damper masters for both channels.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">2.8 Autopilot Master 1+2</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p2-8">
+          <span class="check-label">AUTO PILOT MASTER 1+2</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Arm autopilot systems for later engagement.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">2.9 Avionics Master 1+2</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p2-9">
+          <span class="check-label">AVIONICS MASTER 1+2</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Power up avionics for both sides.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">2.10 GRND IGN</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p2-10">
+          <span class="check-label">GRND IGN</span>
+        </label>
+        <span class="check-action">ODD: A / EVEN: B</span>
+        <p class="check-note">Select ignition channel based on day (A/B logic).</p>
+      </div>
+    </div>
+
+    <!-- ... PHASE 2 continues ... -->
+      <!-- CONTINUATION OF PHASE 2 -->
+
+    <div class="subsection">
+      <h3 class="subsection-title">2.11 ANTI SKID</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p2-11">
+          <span class="check-label">ANTI SKID</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Enable anti‑skid protection for braking.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">2.12 YEL+GRN Lift Spoilers</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p2-12">
+          <span class="check-label">YEL+GRN LIFT SPLRS</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Arm lift spoiler systems on yellow and green hydraulics.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">2.13 BUS-TIE AC+DC</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p2-13">
+          <span class="check-label">BUS-TIE AC+DC</span>
+        </label>
+        <span class="check-action">AUTO</span>
+        <p class="check-note">Allow automatic bus‑tie logic for AC and DC buses.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">2.14 STBY INV+GEN</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p2-14">
+          <span class="check-label">STBY INV+GEN</span>
+        </label>
+        <span class="check-action">ARM</span>
+        <p class="check-note">Arm standby inverter and generator for backup power.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">2.15 GALLEY</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p2-15">
+          <span class="check-label">GALLEY</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Supply power to galley as required.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">2.16 GEN 1+4</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p2-16">
+          <span class="check-label">GEN 1+4</span>
+        </label>
+        <span class="check-action">OFF / RESET</span>
+        <p class="check-note">Ensure engine generators 1 and 4 are off/reset before start.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">2.17 APU GEN</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p2-17">
+          <span class="check-label">APU GEN</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Connect APU generator to aircraft electrical system.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">2.18 Fire Handles</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p2-18">
+          <span class="check-label">FIRE HANDLES</span>
+        </label>
+        <span class="check-action">IN</span>
+        <p class="check-note">Verify all engine fire handles are in and not pulled.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">2.19 Engine Fire Detect</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p2-19">
+          <span class="check-label">ENGINE FIRE DETECT</span>
+        </label>
+        <span class="check-action">ODD: A / EVEN: B</span>
+        <p class="check-note">Select engine fire detection channel per odd/even day logic.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">2.20 L INNER Fuel Pump</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p2-20">
+          <span class="check-label">L INNER Fuel Pump</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Turn on left inner fuel pump for APU supply.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">2.21 APU</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p2-21">
+          <span class="check-label">APU</span>
+        </label>
+        <span class="check-action">START</span>
+        <p class="check-note">Start APU and monitor RPM and TGT rise.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">2.22 APU AIR</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p2-22">
+          <span class="check-label">APU AIR</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Supply bleed air from APU to packs.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">2.23 PACK 1 or 2</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p2-23">
+          <span class="check-label">PACK 1 or 2</span>
+        </label>
+        <span class="check-action">ODD: 1 / EVEN: 2</span>
+        <p class="check-note">Use alternating pack logic per odd/even day.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PHASE 3 — INITIAL PREFLIGHT PROCEDURE -->
+<section class="phase collapsed">
+  <div class="phase-header">
+    <div class="phase-header-left">
+      <h2 class="phase-title">PHASE 3 — INITIAL PREFLIGHT PROCEDURE</h2>
+      <p class="phase-subtitle">Systems tests, hydraulics, doors, and FMS</p>
+    </div>
+    <div class="phase-number">3</div>
+  </div>
+
+  <div class="phase-body">
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.1 Cockpit Lights</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p3-1">
+          <span class="check-label">Cockpit Lights</span>
+        </label>
+        <span class="check-action">AS REQ.</span>
+        <p class="check-note">Set cockpit lighting appropriate for conditions.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.2 MWS Control (Push)</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p3-2">
+          <span class="check-label">MWS Control</span>
+        </label>
+        <span class="check-action">PUSH</span>
+        <p class="check-note">Verify MWS annunciators and chimes operate.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.3 MWS Control (Pull)</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p3-3">
+          <span class="check-label">MWS Control</span>
+        </label>
+        <span class="check-action">PULL</span>
+        <p class="check-note">Return MWS control to middle (not illuminated).</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.4 Ground Tests</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p3-4">
+          <span class="check-label">Ground Tests</span>
+        </label>
+        <span class="check-action">PERFORM</span>
+        <p class="check-note">Run required ground test functions per SOP.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.5 DC Pump</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p3-5">
+          <span class="check-label">DC PUMP</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Check for rise in yellow hydraulic pressure.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.6 DC Pump Off</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p3-6">
+          <span class="check-label">DC PUMP</span>
+        </label>
+        <span class="check-action">OFF</span>
+        <p class="check-note">Turn DC pump off after pressure check.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.7 AC Pump</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p3-7">
+          <span class="check-label">AC PUMP</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Check yellow hydraulic pressure rise with AC pump.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.8 PTU</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p3-8">
+          <span class="check-label">PTU</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Verify green system hydraulic pressure rises.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.9 AC Pump Off</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p3-9">
+          <span class="check-label">AC PUMP</span>
+        </label>
+        <span class="check-action">OFF</span>
+        <p class="check-note">Turn AC pump off after checks.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.10 PTU Off</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p3-10">
+          <span class="check-label">PTU</span>
+        </label>
+        <span class="check-action">OFF</span>
+        <p class="check-note">Return PTU to OFF after pressure verification.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.11 Doors</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p3-11">
+          <span class="check-label">Doors (EFB)</span>
+        </label>
+        <span class="check-action">OPEN</span>
+        <p class="check-note">Open doors via EFB for boarding/ground ops.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.12 Airstairs</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p3-12">
+          <span class="check-label">Airstairs (EFB)</span>
+        </label>
+        <span class="check-action">EXTEND</span>
+        <p class="check-note">Extend airstairs as required for boarding.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.13 Weights &amp; Fuel</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p3-13">
+          <span class="check-label">Weights &amp; Fuel (EFB)</span>
+        </label>
+        <span class="check-action">SETUP</span>
+        <p class="check-note">Configure payload and fuel in EFB per plan.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.14 FMS</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p3-14">
+          <span class="check-label">FMS</span>
+        </label>
+        <span class="check-action">SETUP</span>
+        <p class="check-note">Program route, performance, and initialization.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.15 EFIS Master 1+2</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p3-15">
+          <span class="check-label">EFIS Master 1+2</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Power EFIS for both captain and FO.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.16 IRS</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p3-16">
+          <span class="check-label">IRS</span>
+        </label>
+        <span class="check-action">NAV</span>
+        <p class="check-note">Set IRS to NAV to begin alignment.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.17 ENG ANT-ICE 1–4</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p3-17">
+          <span class="check-label">ENG ANT-ICE 1–4</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Enable engine anti‑ice as per procedure.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.18 FLT DECK EMERG LTS</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p3-18">
+          <span class="check-label">FLT DECK EMERG LTS</span>
+        </label>
+        <span class="check-action">ARM</span>
+        <p class="check-note">Arm flight deck emergency lighting.</p>
+      </div>
+    </div>
+
+
+        <!-- PHASE 3 — CONTINUED -->
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.19 FLT ANNUNS Test</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p3-19">
+          <span class="check-label">FLT ANNUNS Test</span>
+        </label>
+        <span class="check-action">PERFORM</span>
+        <p class="check-note">Test flight annunciator panel indications.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.20 Pressurization Mode</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p3-20">
+          <span class="check-label">Press. MODE</span>
+        </label>
+        <span class="check-action">AUTO</span>
+        <p class="check-note">Set pressurization controller to AUTO.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.21 Pressurization Altitude</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p3-21">
+          <span class="check-label">Press. ALT</span>
+        </label>
+        <span class="check-action">DEST ALT.</span>
+        <p class="check-note">Set destination field elevation.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.22 CVR</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p3-22">
+          <span class="check-label">CVR</span>
+        </label>
+        <span class="check-action">TEST</span>
+        <p class="check-note">Test cockpit voice recorder.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.23 Standby Attitude Indicator</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p3-23">
+          <span class="check-label">Stby Att. Indicator</span>
+        </label>
+        <span class="check-action">UNCAGE</span>
+        <p class="check-note">Release standby attitude gyro from caged position.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.24 EGPWS</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p3-24">
+          <span class="check-label">EGPWS</span>
+        </label>
+        <span class="check-action">TEST</span>
+        <p class="check-note">Perform enhanced GPWS test.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.25 TCAS</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p3-25">
+          <span class="check-label">TCAS</span>
+        </label>
+        <span class="check-action">TEST</span>
+        <p class="check-note">Run TCAS test sequence.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.26 FDR</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p3-26">
+          <span class="check-label">FDR</span>
+        </label>
+        <span class="check-action">TEST</span>
+        <p class="check-note">Test flight data recorder.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.27 Oxygen Main Valve</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p3-27">
+          <span class="check-label">Oxygen Main Valve</span>
+        </label>
+        <span class="check-action">OPEN</span>
+        <p class="check-note">Open crew oxygen supply valve.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.28 Parking Brake</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p3-28">
+          <span class="check-label">Parking Brake</span>
+        </label>
+        <span class="check-action">SET</span>
+        <p class="check-note">Set parking brake before further checks.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.29 Yellow Brake Pressure</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p3-29">
+          <span class="check-label">YELLOW Brake Pressure</span>
+        </label>
+        <span class="check-action">CHECK ≥ 2,500 PSI</span>
+        <p class="check-note">Use DC pump if pressure is low.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.30 Thrust Levers</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p3-30">
+          <span class="check-label">Thrust Levers</span>
+        </label>
+        <span class="check-action">FUEL OFF</span>
+        <p class="check-note">Confirm all thrust levers are at fuel off before start.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.31 Hydraulics</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p3-31">
+          <span class="check-label">Hydraulics</span>
+        </label>
+        <span class="check-action">VERIFY OFF</span>
+        <p class="check-note">Ensure hydraulic pumps are off before engine start.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.32 CTR TANK TRANSFER</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p3-32">
+          <span class="check-label">CTR TANK TRANSFER</span>
+        </label>
+        <span class="check-action">AUTO</span>
+        <p class="check-note">Set center tank transfer to AUTO.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.33 ICE DETECT</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p3-33">
+          <span class="check-label">ICE DETECT</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Enable ice detection system.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.34 FUEL QTY</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p3-34">
+          <span class="check-label">FUEL QTY</span>
+        </label>
+        <span class="check-action">VERIFY</span>
+        <p class="check-note">Confirm fuel quantity matches planned load.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.35 FASTEN BELTS</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p3-35">
+          <span class="check-label">FASTEN BELTS</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Turn on seat belt signs before departure.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PHASE 4 — AUTOFLIGHT SETUP -->
+<section class="phase collapsed">
+  <div class="phase-header">
+    <div class="phase-header-left">
+      <h2 class="phase-title">PHASE 4 — AUTOFLIGHT SETUP</h2>
+      <p class="phase-subtitle">Thrust rating, speeds, and MCP</p>
+    </div>
+    <div class="phase-number">4</div>
+  </div>
+
+  <div class="phase-body">
+
+    <div class="subsection">
+      <h3 class="subsection-title">4.1 TOGA / REDU</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p4-1">
+          <span class="check-label">TOGA (TRP)</span>
+        </label>
+        <span class="check-action">TOGA OR REDU</span>
+        <p class="check-note">Select takeoff or reduced thrust mode.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">4.2 TEMP</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p4-2">
+          <span class="check-label">TEMP (TRP)</span>
+        </label>
+        <span class="check-action">SET WHEN REDU</span>
+        <p class="check-note">Enter assumed temperature for reduced thrust.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">4.3 VSpeeds</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p4-3">
+          <span class="check-label">VSpeeds (TRP)</span>
+        </label>
+        <span class="check-action">SET</span>
+        <p class="check-note">Set V1, VR, V2 (can be auto via flap flipchart).</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">4.4 Flight Director</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p4-4">
+          <span class="check-label">Flight Director</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Turn on FD for both sides as required.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">4.5 DMEs</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p4-5">
+          <span class="check-label">DMEs</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Enable DME readouts for navigation.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">4.6 VHF NAV 1+2</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p4-6">
+          <span class="check-label">VHF NAV 1+2</span>
+        </label>
+        <span class="check-action">SET AS REQ.</span>
+        <p class="check-note">Tune navigation radios for departure/approach.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">4.7 MCP</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p4-7">
+          <span class="check-label">MCP</span>
+        </label>
+        <span class="check-action">SETUP</span>
+        <p class="check-note">Set initial heading, altitude, and modes.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">4.8 IAS/MACH</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p4-8">
+          <span class="check-label">IAS/MACH</span>
+        </label>
+        <span class="check-action">V2 SPEED</span>
+        <p class="check-note">Set IAS/MACH window to V2 for takeoff.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">4.9 VHF COMM 1+2</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p4-9">
+          <span class="check-label">VHF COMM 1+2</span>
+        </label>
+        <span class="check-action">SET AS REQ.</span>
+        <p class="check-note">Tune COM radios for ATC and ground.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PHASE 5 — BEFORE START -->
+<section class="phase collapsed">
+  <div class="phase-header">
+    <div class="phase-header-left">
+      <h2 class="phase-title">PHASE 5 — BEFORE START</h2>
+      <p class="phase-subtitle">Doors, pumps, packs, and start configuration</p>
+    </div>
+    <div class="phase-number">5</div>
+  </div>
+
+  <div class="phase-body">
+
+    <div class="subsection">
+      <h3 class="subsection-title">5.1 AC Pump</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p5-1">
+          <span class="check-label">AC Pump</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Turn AC pump on prior to pushback and start.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">5.2 Airstairs</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p5-2">
+          <span class="check-label">Airstairs (EFB)</span>
+        </label>
+        <span class="check-action">RETRACT</span>
+        <p class="check-note">Retract airstairs before engine start and pushback.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">5.3 Doors</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p5-3">
+          <span class="check-label">Doors (EFB)</span>
+        </label>
+        <span class="check-action">CLOSE</span>
+        <p class="check-note">Close all doors prior to start.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">5.4 AC Pump Off</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p5-4">
+          <span class="check-label">AC Pump</span>
+        </label>
+        <span class="check-action">OFF</span>
+        <p class="check-note">Turn AC pump off when no longer required.</p>
+      </div>
+    </div>
+
+
+        <div class="subsection">
+      <h3 class="subsection-title">5.5 BEACON</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p5-5">
+          <span class="check-label">BEACON</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Turn beacon on to signal engine start in progress.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">5.6 APU AIR</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p5-6">
+          <span class="check-label">APU AIR</span>
+        </label>
+        <span class="check-action">OFF</span>
+        <p class="check-note">Turn APU air off prior to engine start sequence.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">5.7 PACK 1+2</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p5-7">
+          <span class="check-label">PACK 1+2</span>
+        </label>
+        <span class="check-action">OFF</span>
+        <p class="check-note">Turn packs off for engine start.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">5.8 FUEL PUMPS 1–4</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p5-8">
+          <span class="check-label">FUEL PUMPS 1–4</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Turn on all engine fuel pumps before start.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">5.9 START PWR</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p5-9">
+          <span class="check-label">START PWR</span>
+        </label>
+        <span class="check-action">NORM</span>
+        <p class="check-note">Set start power selector to NORM.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">5.10 START MASTER</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p5-10">
+          <span class="check-label">START MASTER</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Arm engine start system.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="phase collapsed">
+  <div class="phase-header">
+    <div class="phase-header-left">
+      <h2 class="phase-title">PHASE 6 — ENGINE START</h2>
+      <p class="phase-subtitle">Pushback, engine start sequence, and stabilization</p>
+    </div>
+    <div class="phase-number">6</div>
+  </div>
+
+  <div class="phase-body">
+
+    <div class="subsection">
+      <h3 class="subsection-title">6.1 Chocks</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p6-1">
+          <span class="check-label">Chocks (EFB)</span>
+        </label>
+        <span class="check-action">REMOVE</span>
+        <p class="check-note">Remove wheel chocks before pushback.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">6.2 Pushback</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p6-2">
+          <span class="check-label">Pushback</span>
+        </label>
+        <span class="check-action">PERFORM AS REQ.</span>
+        <p class="check-note">Conduct pushback as required for departure.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">6.3 START SELECT</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p6-3">
+          <span class="check-label">START SELECT</span>
+        </label>
+        <span class="check-action">ENG 4</span>
+        <p class="check-note">Select engine 4 for first start.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">6.4 ENGINE Start</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p6-4">
+          <span class="check-label">ENGINE</span>
+        </label>
+        <span class="check-action">START</span>
+        <p class="check-note">Initiate engine start; verify IGN A &amp; B and starter lights.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">6.5 N1/TGT/N2 Monitor</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p6-5">
+          <span class="check-label">N1, TGT, N2</span>
+        </label>
+        <span class="check-action">MONITOR</span>
+        <p class="check-note">Monitor engine parameters during start.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">6.6 Thrust Lever Eng. 4</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p6-6">
+          <span class="check-label">Thrust Lever Eng. 4</span>
+        </label>
+        <span class="check-action">FUEL ON</span>
+        <p class="check-note">At ~10% N2, move thrust lever 4 to FUEL ON.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">6.7 Engine Parameters</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p6-7">
+          <span class="check-label">Fuel Flow &amp; N1/TGT/N2</span>
+        </label>
+        <span class="check-action">CONFIRM</span>
+        <p class="check-note">Confirm fuel flow and rising N1, TGT, N2.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">6.8 Repeat Engine Starts</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p6-8">
+          <span class="check-label">Engines 3, 2, 1</span>
+        </label>
+        <span class="check-action">START</span>
+        <p class="check-note">Repeat start sequence for engines 3, 2, and 1.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">6.9 START SELECT Off</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p6-9">
+          <span class="check-label">START SELECT</span>
+        </label>
+        <span class="check-action">OFF</span>
+        <p class="check-note">Return start selector to OFF after all starts.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">6.10 START MASTER Off</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p6-10">
+          <span class="check-label">START MASTER</span>
+        </label>
+        <span class="check-action">OFF</span>
+        <p class="check-note">Disarm engine start system.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">6.11 ENG ANT-ICE</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p6-11">
+          <span class="check-label">ENG ANT-ICE</span>
+        </label>
+        <span class="check-action">AS REQ.</span>
+        <p class="check-note">Set engine anti‑ice according to conditions.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">6.12 GEN 1+4</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p6-12">
+          <span class="check-label">GEN 1+4</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Connect engine generators 1 and 4 to the bus.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">6.13 APU AIR</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p6-13">
+          <span class="check-label">APU AIR</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Use APU air as required after engine start.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">6.14 PACK 1+2</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p6-14">
+          <span class="check-label">PACK 1+2</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Restore packs after engine start.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">6.15 BRAKE FANS</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p6-15">
+          <span class="check-label">BRAKE FANS</span>
+        </label>
+        <span class="check-action">AUTO</span>
+        <p class="check-note">Set brake fans to AUTO for brake cooling.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">6.16 ENG 2+3 PUMP</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p6-16">
+          <span class="check-label">ENG 2+3 PUMP</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Turn on engine‑driven pumps 2 and 3.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">6.17 Hydraulic Pressure</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p6-17">
+          <span class="check-label">Hydraulic Pressure</span>
+        </label>
+        <span class="check-action">CHECK ≥ 3,000 PSI</span>
+        <p class="check-note">Confirm both systems show sufficient pressure.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">6.18 AC PUMP</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p6-18">
+          <span class="check-label">AC PUMP</span>
+        </label>
+        <span class="check-action">AUTO</span>
+        <p class="check-note">Set AC pump to AUTO after start.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">6.19 PTU</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p6-19">
+          <span class="check-label">PTU</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Enable PTU for hydraulic redundancy.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">6.20 Heaters</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p6-20">
+          <span class="check-label">Heaters</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Turn on heaters as required.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">6.21 Animal Bay Heat</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p6-21">
+          <span class="check-label">ANIMAL BAY HEAT</span>
+        </label>
+        <span class="check-action">AS REQ.</span>
+        <p class="check-note">Set animal bay heating if needed.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="phase collapsed">
+  <div class="phase-header">
+    <div class="phase-header-left">
+      <h2 class="phase-title">PHASE 7 — BEFORE TAXI</h2>
+      <p class="phase-subtitle">Flaps, lights, trims, config check</p>
+    </div>
+    <div class="phase-number">7</div>
+  </div>
+
+  <div class="phase-body">
+
+    <div class="subsection">
+      <h3 class="subsection-title">7.1 Flaps</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p7-1">
+          <span class="check-label">Flaps</span>
+        </label>
+        <span class="check-action">18</span>
+        <p class="check-note">Set flaps to 18 for taxi and takeoff configuration.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">7.2 Taxi Lights</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p7-2">
+          <span class="check-label">TAXI LTS</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Turn taxi lights on before movement.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">7.3 Rudder Trim</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p7-3">
+          <span class="check-label">Rudder Trim</span>
+        </label>
+        <span class="check-action">CENTER</span>
+        <p class="check-note">Ensure rudder trim is centered.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">7.4 Aileron Trim</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p7-4">
+          <span class="check-label">Aileron Trim</span>
+        </label>
+        <span class="check-action">CENTER</span>
+        <p class="check-note">Ensure aileron trim is centered.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">7.5 Elevator Trim</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p7-5">
+          <span class="check-label">Elevator Trim</span>
+        </label>
+        <span class="check-action">GREEN BAND</span>
+        <p class="check-note">Set elevator trim within green band (EFB auto‑sets via CG%).</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">7.6 CONFIG CHECK</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p7-6">
+          <span class="check-label">CONFIG CHECK</span>
+        </label>
+        <span class="check-action">PRESS &amp; HOLD</span>
+        <p class="check-note">Verify no config warnings; release parking brake beforehand.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">7.7 CONT IGN A &amp; B</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p7-7">
+          <span class="check-label">CONT IGN A &amp; B</span>
+        </label>
+        <span class="check-action">AS REQ.</span>
+        <p class="check-note">Use continuous ignition in heavy precipitation or standing water.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="phase collapsed">
+  <div class="phase-header">
+    <div class="phase-header-left">
+      <h2 class="phase-title">PHASE 8 — BEFORE TAKEOFF</h2>
+      <p class="phase-subtitle">Lights, transponder, controls, AT</p>
+    </div>
+    <div class="phase-number">8</div>
+  </div>
+
+  <div class="phase-body">
+
+    <div class="subsection">
+      <h3 class="subsection-title">8.1 Cabin Call</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p8-1">
+          <span class="check-label">Cabin Call</span>
+        </label>
+        <span class="check-action">PRESS</span>
+        <p class="check-note">Notify cabin crew for takeoff readiness.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">8.2 Landing Lights</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p8-2">
+          <span class="check-label">LANDING LTS</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Turn landing lights on when entering runway.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">8.3 Strobe</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p8-3">
+          <span class="check-label">STROBE</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Turn strobes on before takeoff roll.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">8.4 Transponder</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p8-4">
+          <span class="check-label">Transponder</span>
+        </label>
+        <span class="check-action">TA/RA</span>
+        <p class="check-note">Set TCAS to TA/RA for takeoff.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">8.5 Flight Controls</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p8-5">
+          <span class="check-label">Flight Controls</span>
+        </label>
+        <span class="check-action">CHECK</span>
+        <p class="check-note">Full free movement check.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">8.6 Auto Throttle</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p8-6">
+          <span class="check-label">AT</span>
+        </label>
+        <span class="check-action">ARM</span>
+        <p class="check-note">Arm autothrottle for takeoff.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">8.7 MWS</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p8-7">
+          <span class="check-label">MWS</span>
+        </label>
+        <span class="check-action">VERIFY</span>
+        <p class="check-note">All captions extinguished except required greens.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="phase collapsed">
+  <div class="phase-header">
+    <div class="phase-header-left">
+      <h2 class="phase-title">PHASE 9 — TAKEOFF ROLL</h2>
+      <p class="phase-subtitle">Thrust set, brakes, TOGA</p>
+    </div>
+    <div class="phase-number">9</div>
+  </div>
+
+  <div class="phase-body">
+
+    <div class="subsection">
+      <h3 class="subsection-title">9.1 Brakes</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p9-1">
+          <span class="check-label">Brakes</span>
+        </label>
+        <span class="check-action">HOLD</span>
+        <p class="check-note">Hold brakes before setting initial thrust.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">9.2 Thrust Levers</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p9-2">
+          <span class="check-label">Thrust Levers</span>
+        </label>
+        <span class="check-action">55% N1</span>
+        <p class="check-note">Stabilize engines at 55% N1 before TOGA.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">9.3 Engines Stable</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p9-3">
+          <span class="check-label">Engines</span>
+        </label>
+        <span class="check-action">VERIFY STABLE</span>
+        <p class="check-note">Confirm all engines stabilized before applying TOGA.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">9.4 TOGA</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p9-4">
+          <span class="check-label">TOGA</span>
+        </label>
+        <span class="check-action">PRESS</span>
+        <p class="check-note">Engage takeoff thrust (or hidden clickspot in MSFS).</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="phase collapsed">
+  <div class="phase-header">
+    <div class="phase-header-left">
+      <h2 class="phase-title">PHASE 10 — INITIAL CLIMB</h2>
+      <p class="phase-subtitle">Gear, AP, LNAV, flaps, climb modes</p>
+    </div>
+    <div class="phase-number">10</div>
+  </div>
+
+  <div class="phase-body">
+
+    <div class="subsection">
+      <h3 class="subsection-title">10.1 Gear</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p10-1">
+          <span class="check-label">Gear</span>
+        </label>
+        <span class="check-action">UP</span>
+        <p class="check-note">Retract gear after positive rate.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">10.2 Autopilot</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p10-2">
+          <span class="check-label">Autopilot</span>
+        </label>
+        <span class="check-action">ENGAGE</span>
+        <p class="check-note">Engage AP as required after initial climb.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">10.3 LNAV</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p10-3">
+          <span class="check-label">LNAV</span>
+        </label>
+        <span class="check-action">ENGAGE</span>
+        <p class="check-note">Engage LNAV for lateral navigation.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">10.4 IAS/MACH</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p10-4">
+          <span class="check-label">IAS/MACH</span>
+        </label>
+        <span class="check-action">ACCL SPEED (210)</span>
+        <p class="check-note">Set acceleration speed after takeoff.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">10.5 Flaps</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p10-5">
+          <span class="check-label">Flaps</span>
+        </label>
+        <span class="check-action">RETRACT</span>
+        <p class="check-note">Retract flaps passing VFTO and 1500 ft AGL.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="phase collapsed">
+  <div class="phase-header">
+    <div class="phase-header-left">
+      <h2 class="phase-title">PHASE 11 — PASSING 10,000 FT</h2>
+      <p class="phase-subtitle">Lights, belts, altimeters, climb speed</p>
+    </div>
+    <div class="phase-number">11</div>
+  </div>
+
+  <div class="phase-body">
+
+    <div class="subsection">
+      <h3 class="subsection-title">11.1 Landing Lights</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p11-1">
+          <span class="check-label">LANDING LTS</span>
+        </label>
+        <span class="check-action">OFF</span>
+        <p class="check-note">Turn landing lights off above 10,000 ft.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">11.2 Fasten Belts</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p11-2">
+          <span class="check-label">FASTEN BELTS</span>
+        </label>
+        <span class="check-action">OFF</span>
+        <p class="check-note">Turn seat belt signs off if conditions permit.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">11.3 Altimeters</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p11-3">
+          <span class="check-label">Altimeters</span>
+        </label>
+        <span class="check-action">1013 / 29.92</span>
+        <p class="check-note">Set standard pressure above transition altitude.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">11.4 IAS/MACH</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p11-4">
+          <span class="check-label">IAS/MACH</span>
+        </label>
+        <span class="check-action">CLB SPEED (280)</span>
+        <p class="check-note">Set climb speed for cruise climb.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="phase collapsed">
+  <div class="phase-header">
+    <div class="phase-header-left">
+      <h2 class="phase-title">PHASE 12 — CRUISE</h2>
+      <p class="phase-subtitle">MCP and cruise speed</p>
+    </div>
+    <div class="phase-number">12</div>
+  </div>
+
+  <div class="phase-body">
+
+    <div class="subsection">
+      <h3 class="subsection-title">12.1 MCP</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p12-1">
+          <span class="check-label">MCP</span>
+        </label>
+        <span class="check-action">AS REQ.</span>
+        <p class="check-note">Adjust MCP modes for cruise.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">12.2 IAS/MACH</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p12-2">
+          <span class="check-label">IAS/MACH</span>
+        </label>
+        <span class="check-action">AS REQ.</span>
+        <p class="check-note">Adjust cruise speed as required (typically M0.67–0.71).</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="phase collapsed">
+  <div class="phase-header">
+    <div class="phase-header-left">
+      <h2 class="phase-title">PHASE 13 — DESCENT PREPARATION</h2>
+      <p class="phase-subtitle">Landing data, pressurization, approach setup</p>
+    </div>
+    <div class="phase-number">13</div>
+  </div>
+
+  <div class="phase-body">
+
+    <div class="subsection">
+      <h3 class="subsection-title">13.1 Decision Height</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p13-1">
+          <span class="check-label">Decision Height</span>
+        </label>
+        <span class="check-action">SET</span>
+        <p class="check-note">Set DH/MDA for approach.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">13.2 Landing Altitude</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p13-2">
+          <span class="check-label">Landing Altitude</span>
+        </label>
+        <span class="check-action">VERIFY</span>
+        <p class="check-note">Verify pressurization landing altitude.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">13.3 Landing Speeds</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p13-3">
+          <span class="check-label">Landing Speeds</span>
+        </label>
+        <span class="check-action">VERIFY</span>
+        <p class="check-note">Check VREF and approach speeds.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">13.4 VCROSS</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p13-4">
+          <span class="check-label">VCROSS</span>
+        </label>
+        <span class="check-action">SET VREF</span>
+        <p class="check-note">Set VREF on thrust rating panel.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">13.5 VDOT</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p13-5">
+          <span class="check-label">VDOT</span>
+        </label>
+        <span class="check-action">SET VFTO</span>
+        <p class="check-note">Set VFTO for approach configuration.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">13.6 MCP</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p13-6">
+          <span class="check-label">MCP</span>
+        </label>
+        <span class="check-action">AS REQUIRED</span>
+        <p class="check-note">Set descent modes and altitude.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">13.7 PTU</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p13-7">
+          <span class="check-label">PTU</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Enable PTU for descent.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="phase collapsed">
+  <div class="phase-header">
+    <div class="phase-header-left">
+      <h2 class="phase-title">PHASE 14 — INITIAL APPROACH</h2>
+      <p class="phase-subtitle">Lights, belts, radios, APU</p>
+    </div>
+    <div class="phase-number">14</div>
+  </div>
+
+  <div class="phase-body">
+
+    <div class="subsection">
+      <h3 class="subsection-title">14.1 Landing Lights</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p14-1">
+          <span class="check-label">LANDING LTS</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Turn landing lights on passing 10,000 ft on descent.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">14.2 Fasten Belts</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p14-2">
+          <span class="check-label">FASTEN BELTS</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Turn seat belt signs on for approach.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">14.3 NAV Radios</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p14-3">
+          <span class="check-label">NAV Radios</span>
+        </label>
+        <span class="check-action">SET AS REQ.</span>
+        <p class="check-note">Tune radios for approach navigation.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">14.4 MCP</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p14-4">
+          <span class="check-label">MCP</span>
+        </label>
+        <span class="check-action">SET AS REQ.</span>
+        <p class="check-note">Configure MCP for approach profile.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">14.5 APU</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p14-5">
+          <span class="check-label">APU</span>
+        </label>
+        <span class="check-action">START AS REQ.</span>
+        <p class="check-note">Start APU if needed for landing or backup power.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="phase collapsed">
+  <div class="phase-header">
+    <div class="phase-header-left">
+      <h2 class="phase-title">PHASE 14 — INITIAL APPROACH</h2>
+      <p class="phase-subtitle">Lights, belts, radios, APU</p>
+    </div>
+    <div class="phase-number">14</div>
+  </div>
+
+  <div class="phase-body">
+
+    <div class="subsection">
+      <h3 class="subsection-title">14.1 Landing Lights</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p14-1">
+          <span class="check-label">LANDING LTS</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Turn landing lights on passing 10,000 ft on descent.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">14.2 Fasten Belts</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p14-2">
+          <span class="check-label">FASTEN BELTS</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Turn seat belt signs on for approach.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">14.3 NAV Radios</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p14-3">
+          <span class="check-label">NAV Radios</span>
+        </label>
+        <span class="check-action">SET AS REQ.</span>
+        <p class="check-note">Tune radios for approach navigation.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">14.4 MCP</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p14-4">
+          <span class="check-label">MCP</span>
+        </label>
+        <span class="check-action">SET AS REQ.</span>
+        <p class="check-note">Configure MCP for approach profile.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">14.5 APU</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p14-5">
+          <span class="check-label">APU</span>
+        </label>
+        <span class="check-action">START AS REQ.</span>
+        <p class="check-note">Start APU if needed for landing or backup power.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="phase collapsed">
+  <div class="phase-header">
+    <div class="phase-header-left">
+      <h2 class="phase-title">PHASE 16 — FINAL APPROACH</h2>
+      <p class="phase-subtitle">Gear, flaps, VREF</p>
+    </div>
+    <div class="phase-number">16</div>
+  </div>
+
+  <div class="phase-body">
+
+    <div class="subsection">
+      <h3 class="subsection-title">16.1 Gear</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p16-1">
+          <span class="check-label">Gear</span>
+        </label>
+        <span class="check-action">DOWN</span>
+        <p class="check-note">Lower landing gear on final approach.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">16.2 Flaps</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p16-2">
+          <span class="check-label">Flaps</span>
+        </label>
+        <span class="check-action">AS REQ.</span>
+        <p class="check-note">Set landing flaps per VREF.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">16.3 Airspeed</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p16-3">
+          <span class="check-label">Airspeed</span>
+        </label>
+        <span class="check-action">VREF + 5</span>
+        <p class="check-note">Target VREF + 5 knots on final.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="phase collapsed">
+  <div class="phase-header">
+    <div class="phase-header-left">
+      <h2 class="phase-title">PHASE 17 — AFTER LANDING</h2>
+      <p class="phase-subtitle">Cleanup, lights, systems</p>
+    </div>
+    <div class="phase-number">17</div>
+  </div>
+
+  <div class="phase-body">
+
+    <div class="subsection">
+      <h3 class="subsection-title">17.1 Auto Throttle</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p17-1">
+          <span class="check-label">Auto Throttle</span>
+        </label>
+        <span class="check-action">OFF</span>
+        <p class="check-note">Disengage autothrottle after landing.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">17.2 Flaps</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p17-2">
+          <span class="check-label">Flaps</span>
+        </label>
+        <span class="check-action">UP</span>
+        <p class="check-note">Retract flaps after clearing runway.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">17.3 Spoilers</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p17-3">
+          <span class="check-label">Spoilers</span>
+        </label>
+        <span class="check-action">RETRACT</span>
+        <p class="check-note">Retract spoilers after landing rollout.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">17.4 Landing Lights</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p17-4">
+          <span class="check-label">LANDING LTS</span>
+        </label>
+        <span class="check-action">OFF</span>
+        <p class="check-note">Turn landing lights off after vacating runway.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">17.5 Taxi Lights</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p17-5">
+          <span class="check-label">TAXI LTS</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Turn taxi lights on for taxi to stand.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">17.6 Strobe</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p17-6">
+          <span class="check-label">STROBE</span>
+        </label>
+        <span class="check-action">OFF</span>
+        <p class="check-note">Turn strobes off after runway exit.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">17.7 Transponder</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p17-7">
+          <span class="check-label">Transponder</span>
+        </label>
+        <span class="check-action">STBY</span>
+        <p class="check-note">Set transponder to standby.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">17.8 Weather Radar</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p17-8">
+          <span class="check-label">Weather Radar</span>
+        </label>
+        <span class="check-action">STBY</span>
+        <p class="check-note">Set radar to standby after landing.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">17.9 CONT IGN</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p17-9">
+          <span class="check-label">CONT IGN A &amp; B</span>
+        </label>
+        <span class="check-action">OFF</span>
+        <p class="check-note">Turn off continuous ignition.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="phase collapsed">
+  <div class="phase-header">
+    <div class="phase-header-left">
+      <h2 class="phase-title">PHASE 18 — TAXI TO GATE</h2>
+      <p class="phase-subtitle">Cooling, APU, hydraulics</p>
+    </div>
+    <div class="phase-number">18</div>
+  </div>
+
+  <div class="phase-body">
+
+    <div class="subsection">
+      <h3 class="subsection-title">18.1 Brake Fans</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p18-1">
+          <span class="check-label">Brake Fans</span>
+        </label>
+        <span class="check-action">AUTO</span>
+        <p class="check-note">Ensure brake fans are in AUTO for cooling.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">18.2 APU</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p18-2">
+          <span class="check-label">APU</span>
+        </label>
+        <span class="check-action">START</span>
+        <p class="check-note">Start APU for gate electrical and air supply.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">18.3 APU GEN</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p18-3">
+          <span class="check-label">APU GEN</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Connect APU generator to aircraft electrical system.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">18.4 ENG 2+3 PUMP</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p18-4">
+          <span class="check-label">ENG 2+3 PUMP</span>
+        </label>
+        <span class="check-action">OFF</span>
+        <p class="check-note">Turn off engine‑driven pumps 2 and 3 after landing.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="phase collapsed">
+  <div class="phase-header">
+    <div class="phase-header-left">
+      <h2 class="phase-title">PHASE 19 — SHUTDOWN &amp; SECURING THE AIRCRAFT</h2>
+      <p class="phase-subtitle">Engines, pumps, lights, power-down</p>
+    </div>
+    <div class="phase-number">19</div>
+  </div>
+
+  <div class="phase-body">
+
+    <div class="subsection">
+      <h3 class="subsection-title">19.1 Parking Brake</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p19-1">
+          <span class="check-label">Parking Brake</span>
+        </label>
+        <span class="check-action">SET</span>
+        <p class="check-note">Set parking brake once parked at the gate or stand.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">19.2 ENG 1–4 Thrust Levers</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p19-2">
+          <span class="check-label">Thrust Levers</span>
+        </label>
+        <span class="check-action">FUEL OFF</span>
+        <p class="check-note">Shut down all engines by selecting FUEL OFF.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">19.3 Beacon</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p19-3">
+          <span class="check-label">BEACON</span>
+        </label>
+        <span class="check-action">OFF</span>
+        <p class="check-note">Turn beacon off once engines have fully spooled down.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">19.4 ENG 1+4 PUMP</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p19-4">
+          <span class="check-label">ENG 1+4 PUMP</span>
+        </label>
+        <span class="check-action">OFF</span>
+        <p class="check-note">Turn off engine‑driven hydraulic pumps 1 and 4.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">19.5 AC Pump</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p19-5">
+          <span class="check-label">AC Pump</span>
+        </label>
+        <span class="check-action">OFF</span>
+        <p class="check-note">Turn off AC hydraulic pump after shutdown.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">19.6 PTU</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p19-6">
+          <span class="check-label">PTU</span>
+        </label>
+        <span class="check-action">OFF</span>
+        <p class="check-note">Disable PTU after engine shutdown.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">19.7 Brake Fans</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p19-7">
+          <span class="check-label">Brake Fans</span>
+        </label>
+        <span class="check-action">AS REQ.</span>
+        <p class="check-note">Use brake fans if brake temperatures are high.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">19.8 APU AIR</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p19-8">
+          <span class="check-label">APU AIR</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Enable APU air for cabin and packs during shutdown.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">19.9 PACK 1+2</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p19-9">
+          <span class="check-label">PACK 1+2</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Restore packs for cabin airflow at the gate.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">19.10 GEN 1+4</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p19-10">
+          <span class="check-label">GEN 1+4</span>
+        </label>
+        <span class="check-action">OFF</span>
+        <p class="check-note">Disconnect engine generators 1 and 4.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">19.11 APU GEN</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p19-11">
+          <span class="check-label">APU GEN</span>
+        </label>
+        <span class="check-action">ON</span>
+        <p class="check-note">Ensure APU generator is powering the aircraft.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">19.12 NAV Lights</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p19-12">
+          <span class="check-label">NAV Lights</span>
+        </label>
+        <span class="check-action">OFF</span>
+        <p class="check-note">Turn off navigation lights once parked and secured.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">19.13 Batteries</h3>
+      <div class="check-row">
+        <label class="check-left">
+          <input type="checkbox" data-id="p19-13">
+          <span class="check-label">BATT 1+2</span>
+        </label>
+        <span class="check-action">OFF</span>
+        <p class="check-note">Turn off batteries to fully secure the aircraft.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+    </main>
+  </div>
+
+  <script>
+    // --- SELECTORS ---
+    const phases = document.querySelectorAll('.phase');
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const expandAllBtn = document.getElementById('expandAll');
+    const collapseAllBtn = document.getElementById('collapseAll');
+    const resetAllBtn = document.getElementById('resetAll');
+    const progressEl = document.getElementById('progress');
+
+    // --- RESTORE CHECKBOX STATES ---
+    checkboxes.forEach(cb => {
+      const id = cb.dataset.id;
+      const saved = localStorage.getItem(id);
+      if (saved === 'true') cb.checked = true;
+
+      cb.addEventListener('change', () => {
+        localStorage.setItem(id, cb.checked);
+        updateProgress();
+      });
+    });
+
+    // --- PHASE COLLAPSE/EXPAND ---
+    phases.forEach(phase => {
+      const header = phase.querySelector('.phase-header');
+      header.addEventListener('click', () => {
+        phase.classList.toggle('collapsed');
+      });
+    });
+
+    // --- EXPAND ALL ---
+    expandAllBtn.addEventListener('click', () => {
+      phases.forEach(p => p.classList.remove('collapsed'));
+    });
+
+    // --- COLLAPSE ALL ---
+    collapseAllBtn.addEventListener('click', () => {
+      phases.forEach(p => p.classList.add('collapsed'));
+    });
+
+    // --- RESET ALL ---
+    resetAllBtn.addEventListener('click', () => {
+      checkboxes.forEach(cb => {
+        cb.checked = false;
+        localStorage.removeItem(cb.dataset.id);
+      });
+      updateProgress();
+    });
+
+    // --- PROGRESS TRACKING ---
+    function updateProgress() {
+      const total = checkboxes.length;
+      const checked = [...checkboxes].filter(cb => cb.checked).length;
+      const pct = Math.round((checked / total) * 100);
+      progressEl.textContent = `Progress: ${pct}%`;
+    }
+
+    updateProgress();
+
+    // --- AUTO-SCROLL TO PHASE ON OPEN ---
+    phases.forEach(phase => {
+     const header = phase.querySelector('.phase-header');
+     header.addEventListener('click', () => {
+      setTimeout(() => {
+       phase.scrollIntoView({ behavior: 'smooth', block: 'start' });
+     }, 150); // slight delay so collapse animation starts first
+    });
+   });
+
+    // --- PWA SERVICE WORKER ---
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js');
+}
+
+
+  // --- FONT SCALING ---
+let fontSize = parseInt(localStorage.getItem('fontSize') || 16);
+
+function applyFontSize() {
+  document.documentElement.style.fontSize = fontSize + 'px';
+  localStorage.setItem('fontSize', fontSize);
+}
+
+applyFontSize();
+
+document.getElementById('fontUp').addEventListener('click', () => {
+  fontSize = Math.min(fontSize + 1, 26);
+  applyFontSize();
+});
+
+document.getElementById('fontDown').addEventListener('click', () => {
+  fontSize = Math.max(fontSize - 1, 12);
+  applyFontSize();
+});
+
+    
+  </script>
+
+</body>
+</html>
