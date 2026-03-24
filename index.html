@@ -2647,16 +2647,6 @@
 
     updateProgress();
 
-    // --- AUTO-SCROLL TO PHASE ON OPEN ---
-    phases.forEach(phase => {
-     const header = phase.querySelector('.phase-header');
-     header.addEventListener('click', () => {
-      setTimeout(() => {
-       phase.scrollIntoView({ behavior: 'smooth', block: 'start' });
-     }, 150); // slight delay so collapse animation starts first
-    });
-   });
-
     // --- PWA SERVICE WORKER ---
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('service-worker.js');
